@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--TitanHacks Joanna + Caroline-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Route Calculator</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&family=Playfair+Display&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <a name="top"></a>
+    
+  </head>
+  <body onload="loadSite()">
+
+    <script src="script.js"></script>
+
+    <div id="header">
+      <h1><a href="index.html">EasyRoutes</a></h1>
+    </div>
+
+    <div id="form">
+      <p>Starting Location</p><br>
+      <input type="text" id="start" name="start" placeholder="7950 Baltimore Avenue, College Park, MD" required><br>
+      <p>Destination</p><br>
+      <input type="text" id="destination" name="destination" onchange="hidetime()" required>
+
+      <table>
+        <tr>
+          <td><p>Max Speed</p></td>
+          <td class="time"><p>Driving Time</p></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="maxSpeed" name="maxSpeed" placeholder="30" required> 
+          <select id="unit">
+            <option value="mph">mph</option>
+            <option value="kmh">km/h</option>
+          </select>
+          </td>
+          <td id="hour" class="time"><input type="text" id="time" name="time" placeholder="1"> hr</td>
+        </tr>
+        <tr>
+          <td id="checks"><p>Exclude highways</p></td>
+          <td id="checks"><p>Avoid traffic</p></td>
+        </tr>
+        <tr>
+          <td id="checks"><label class="container">
+              <input type="checkbox" id="highways" name="highways" value="Highways" checked="true">
+              <span class="checkmark"></span>
+            </label> </td>
+          <td id="checks"><label class="container">
+            <input type="checkbox" id="traffic" name="traffic" value="Traffic" checked="true">
+            <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+      </table>      
+
+      <center><input type="button" onclick="submit()" value="Submit"></center>
+    </div>
+
+    <a name="route"></a>
+    <div id="map"></div>
+    <div id="directions"></div>
+
+    <center><input type="button" onclick="scrollUp()" value="Back to Top"></center>
+    <div id="footer">
+      Created by Caroline Dinh and Joanna Ge during TitanHacks 2020. <a href="about.html">About.</a>
+    </div>
+    </body>
+</html>

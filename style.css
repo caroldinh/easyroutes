@@ -1,0 +1,306 @@
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    width: 100vw;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(12px + 1vw);
+    background: #363661;
+    color: white;
+}
+
+#header {
+  text-align: center;
+  width: 100vw;
+}
+
+#header a {
+  text-decoration: none;
+  color: white;
+}
+
+#main {
+  font-weight: 100;
+  color: white;
+  width: 60vw;
+  text-align: left;
+  margin: auto;
+  margin-bottom: 5vw;
+}
+
+#main p {
+  opacity: 1;
+  padding-top: 4vw;
+  line-height: 1.5;
+}
+
+
+#directions{
+  width: 90vw;
+}
+
+#directions p {
+  text-align: left;
+  opacity: 1;
+  margin: 0 auto;
+  width: 40vw;
+}
+
+input[type=text]{
+  font-family: 'Playfair Display', serif;
+  font-size: calc(12px + 1vw);
+  font-weight: 100;
+  border: none;
+  color:white;
+  outline: 0;
+  background-color: #363661;
+  border-bottom: 1px solid white;
+  margin: 0 5vw;
+}
+
+input[type=text]:focus {
+  box-shadow: 0px 15px 10px -15px gray;    
+}
+
+select{
+  font-family: 'Playfair Display', serif;
+  font-size: calc(12px + 1vw);
+  border-radius: 12px;
+  border: none;
+  margin: 1vw;
+  font-weight: 100;
+  color:white;
+  background-color: #363661;
+}
+
+#start, #destination{
+  width: 87%;
+}
+
+#maxSpeed, #time{
+  width: calc(20px + 5%);
+  margin: 0;
+}
+
+#hour {
+  font-family: 'Playfair Display', serif;
+}
+
+input[type=button]{
+  margin:3vw;
+  font-family: 'Roboto', sans-serif;
+  font-size: calc(10px + 1vw);
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 1vw 2vw;
+  background-color: #363661;
+  color:white;
+  font-weight: 100;
+}
+
+input[type=button]:hover {
+  background-color: white;
+  color: #363661;
+  border: 1px solid #363661;
+  cursor: pointer;
+}
+
+#directions{
+  padding: 5vw;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.instrucBox{
+  background-color:#363661;
+  font-family: 'Roboto', sans-serif;
+  width:88vw;
+  padding:1vw;
+}
+
+p{
+  color:white;
+  font-family: 'Roboto', sans-serif;
+  margin: 0 5vw;
+  font-size: calc(5px + 1vw);
+  opacity: 0.7;
+  padding-top: 7vw;
+}
+
+.direction{
+  padding-top: 0vw;
+  padding-bottom:3vw;
+}
+
+.instrucBox:hover{
+  filter:brightness(80%);
+}
+
+#form {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 10vw;
+  background-color: #363661;
+  color:  white;
+  border-radius: 1vw;
+  font-weight: 100;
+  line-height: 0.35;
+}
+
+table {
+  width: 70vw;
+  margin: 0 5vw;  
+}
+
+td {
+  width: 50%;
+  text-align: center;
+}
+
+td p {
+  margin: 0;
+  font-size: calc(5px + 1vw);
+  color: white;
+  opacity: 0.7;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+#time td {
+  text-align: center;
+  width: 2vw;
+}
+
+#maxSpeed td{
+  width:10vw;
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.9;
+}
+
+#checks p {
+  text-align: center;
+}
+
+.container {
+    display: block;
+    position: relative;
+    margin: 2vw auto;
+    cursor: pointer;
+    font-size: calc(12px + 1vw);
+    line-height: 24px;
+    height: 24px;
+    width: 24px;
+    clear: both;
+    
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.container .checkmark {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 3vw;
+    width: 3vw;
+    background-color: transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    border: 1px solid #FFFFFF;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: white;
+}
+
+.container input:checked ~ .checkmark {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    -webkit-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+    opacity:1;
+    border: 2px solid #FFFFFF;
+}
+
+.container .checkmark::after {
+    position: absolute;
+    content: "";
+    left: 12px;
+    top: 12px;
+    height: 0px;
+    width: 0px;
+    border-radius: 5px;
+    border: solid #363661;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    -ms-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+    opacity:1;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.container input:checked ~ .checkmark::after {
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  opacity:1;
+  left: 1.1vw;
+  top: 0.5vw;
+  width: 0.7vw;
+  height: 1.3vw;
+  border: solid #363661;
+  border-width: 0 0.25vw 0.25vw 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+#map {
+    /*padding:5vw;*/
+    margin-right:20vw;
+    margin-left:20vw;
+    margin-top:5vw;
+    width: 60vw;
+    height: 0;
+    background: #363661;
+    /*visibility:hidden;*/
+}
+
+#panel {
+  padding:20vw;
+  width: 60%;
+  height: 40vw;
+}
+
+#footer {
+  margin-top: 15vw;
+  margin-bottom: 2vw;
+  text-align: center;
+  font-weight: 100;
+  font-size: calc(5px + 0.5vw);
+}
+
+#footer a {
+  color: white;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
